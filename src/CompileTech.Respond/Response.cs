@@ -3,57 +3,6 @@ using System.Diagnostics.Contracts;
 
 namespace CompileTech.Respond
 {
-    public enum ErrorResultType
-    {
-        Unhandled = 0,
-        Unauthorized = 1,
-        Validation = 2
-    }
-
-    public class ErrorResult
-    {
-        public ErrorResultType Type { get; protected set; } = ErrorResultType.Unhandled;
-        public string Subject { get; protected set; }
-        public string Message { get; protected set; }
-        public object TranslationData { get; protected set; }
-    }
-
-    public class UnauthorizedErrorResult : ErrorResult
-    {
-        public UnauthorizedErrorResult()
-        {
-            Type = ErrorResultType.Unauthorized;
-        }
-
-        [Pure]
-        public static UnauthorizedErrorResult Make()
-        {
-            return new UnauthorizedErrorResult();
-        }
-    }
-
-    public class ValidationErrorResult : ErrorResult
-    {
-        public ValidationErrorResult()
-        {
-            Type = ErrorResultType.Validation;
-        }
-
-        [Pure]
-        public static ValidationErrorResult None => null;
-
-        [Pure]
-        public static ValidationErrorResult Make(string message, string subject = null, object translationData = null)
-        {
-            return new ValidationErrorResult
-            {
-                Subject = subject,
-                Message = message,
-                TranslationData = translationData
-            };
-        }
-    }
-
     public class Response
     {
         private readonly ErrorResult _error;
