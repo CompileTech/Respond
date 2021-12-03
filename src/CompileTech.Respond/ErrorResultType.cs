@@ -4,6 +4,7 @@
     {
         Unhandled = 0,
         Unauthorized = 1,
-        Validation = 2
+        Validation = 2,
+        NotFound = 3
     }
 }
