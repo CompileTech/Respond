@@ -10,9 +10,14 @@ namespace CompileTech.Respond
         }
 
         [Pure]
-        public static NotFoundErrorResult Make()
+        public static NotFoundErrorResult Make(string message, string subject = null, object translationData = null)
         {
-            return new NotFoundErrorResult();
+            return new NotFoundErrorResult
+            {
+                Subject = subject,
+                Message = message,
+                TranslationData = translationData
+            };
         }
     }
 }
