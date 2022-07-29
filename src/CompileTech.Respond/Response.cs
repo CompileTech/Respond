@@ -39,7 +39,7 @@ namespace CompileTech.Respond
         }
     }
 
-    public class Response<TResult>
+    public class Response<TResult> : Response
     {
         private readonly ErrorResult _error;
         private readonly bool _isSuccess;
