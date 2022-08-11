@@ -2,7 +2,6 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>0.0.6</Version>
     <PackageId>CompileTech.Respond</PackageId>
     <Authors>CompileTech</Authors>
     <Company>CompileTech</Company>
@@ -11,7 +10,7 @@
     <PackageTags>Errors, Responses, Error, Response, Error Handling</PackageTags>
     <RepositoryUrl>https://github.com/CompileTech/Respond</RepositoryUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageVersion>0.0.6</PackageVersion>
+    <PackageVersion>0.0.8</PackageVersion>
   </PropertyGroup>
 
 </Project>

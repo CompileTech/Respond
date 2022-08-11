@@ -1,4 +1,7 @@
-﻿using System.Diagnostics.Contracts;
+﻿using System;
+using System.Diagnostics.Contracts;
+using System.Linq.Expressions;
+using static CompileTech.Respond.HelperMethods;
 
 namespace CompileTech.Respond
 {
@@ -21,6 +24,12 @@ namespace CompileTech.Respond
                 Message = message,
                 TranslationData = translationData
             };
+        }  
+        
+        [Pure]
+        public static ValidationErrorResult Make(Expression<Func<string>> messageKeyExpression, string subject = null, object translationData = null)
+        {
+            return Make(GetExpressionMemberName(messageKeyExpression), subject, translationData);
         }
     }
 }
